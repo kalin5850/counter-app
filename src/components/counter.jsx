@@ -25,17 +25,19 @@ class Counter extends Component {
     );
   }
 
-  handleIncrement = () => {
+  handleIncrement = (product) => {
+    console.log(product);
     // update count value
     this.setState({ count: this.state.count + 1 });
   };
 
   render() {
+    var product = 1;
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement} // passing reference not method
+          onClick={() => this.handleIncrement(product)} // passing reference not method
           className="btn btn-secondary btn-sm"
         >
           Increment
